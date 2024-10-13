@@ -2,7 +2,7 @@ use std::io::{self, Write};
 
 use chrono::Local;
 use fern::Dispatch;
-use log::{debug, error, info, warn};
+use log::{error, info};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::{TcpListener, TcpStream};
 
@@ -124,6 +124,5 @@ async fn run_client() -> Result<(), Box<dyn std::error::Error>> {
         let n = stream.read(&mut buffer).await?;
         println!("Received response: {}", String::from_utf8_lossy(&buffer[..n]));
     }
-    Ok(())
 }
 
