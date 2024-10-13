@@ -1,0 +1,32 @@
+2024-10-13 19:42:22 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:42:24 [INFO] Starting server...
+2024-10-13 19:42:24 [INFO] Server running on 127.0.0.1:3000
+2024-10-13 19:42:48 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:42:48 [INFO] Starting client...
+2024-10-13 19:42:48 [INFO] New connection from 127.0.0.1:54906
+2024-10-13 19:42:48 [INFO] Sent response to client
+2024-10-13 19:46:02 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:46:03 [INFO] Starting server...
+2024-10-13 19:46:03 [INFO] Server running on 127.0.0.1:3000
+2024-10-13 19:46:06 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:46:07 [INFO] Starting client...
+2024-10-13 19:46:07 [INFO] Please enter message sent to server
+2024-10-13 19:46:11 [INFO] New connection from 127.0.0.1:55526
+2024-10-13 19:46:11 [INFO] Sent response to client
+2024-10-13 19:46:11 [INFO] Please enter message sent to server
+2024-10-13 19:46:59 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:47:19 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:47:21 [INFO] Please select mode: (1) Server, (2) Client
+2024-10-13 19:47:23 [INFO] Starting client...
+2024-10-13 19:47:23 [INFO] Please enter message sent to server
+2024-10-13 19:47:24 [INFO] Starting server...
+2024-10-13 19:47:24 [INFO] Server running on 127.0.0.1:3000
+2024-10-13 19:47:29 [INFO] New connection from 127.0.0.1:55721
+2024-10-13 19:47:29 [INFO] Sent response to client
+2024-10-13 19:47:29 [INFO] Please enter message sent to server
+2024-10-13 19:47:33 [INFO] New connection from 127.0.0.1:55723
+2024-10-13 19:47:33 [INFO] Sent response to client
+2024-10-13 19:47:33 [INFO] Please enter message sent to server
+2024-10-13 19:47:39 [INFO] New connection from 127.0.0.1:55808
+2024-10-13 19:47:39 [INFO] Sent response to client
+2024-10-13 19:47:39 [INFO] Please enter message sent to server
