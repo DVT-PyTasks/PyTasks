@@ -3,8 +3,14 @@ name: Rust
 on:
   push:
     branches: [ "master" ]
+    paths:
+      - "Cargo.toml"
+      - "**.rs"
   pull_request:
     branches: [ "master" ]
+    paths:
+      - "Cargo.toml"
+      - "**.rs"
 
 env:
   CARGO_TERM_COLOR: always
@@ -17,6 +23,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
+      working-directory: users/am/server/
       run: cargo build --verbose
     - name: Run tests
+      working-directory: users/am/server/
       run: cargo test --verbose
