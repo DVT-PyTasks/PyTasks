@@ -110,7 +110,7 @@ async fn run_client() -> Result<(), Box<dyn std::error::Error>> {
         let input = input.trim();
         // Connect to the server
         let mut stream = TcpStream::connect("127.0.0.1:3000").await?;
-        println!("Connected to the server");
+        info!("Connected to the server");
 
         // Send a request to the server
         let request = format!("Hello from the client!. Message {}", input);
