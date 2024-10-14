@@ -16,7 +16,6 @@ jobs:
       - name: Add approved label if LGTM
         if: github.actor == 'amw007' && contains(github.event.comment.body, 'LGTM')
         uses: actions/github-script@v6
-        debug: true
         with:
           script: |
             await github.rest.issues.addLabels({
@@ -37,20 +36,26 @@ jobs:
 
       - name: Merge PR if approved
         uses: actions/github-script@v6
-        debug: true
         with:
           script: |
-            const pr = await github.rest.pulls.get({
+            const prNumber = context.payload.issue.pull_request ? context.payload.issue.number : null;
+
+            if (!prNumber) {
+              console.log('This comment is not associated with a pull request.');
+              return;
+            }
+
+            const { data: pr } = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.issue.number
+              pull_number: prNumber  # Correctly fetch the pull request number
             });
-
-            if (pr.data.labels.some(label => label.name === 'approved')) {
+            
+            if (pr.labels.some(label => label.name === 'approved')) {
               await github.rest.pulls.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                pull_number: pr.data.number,
-                merge_method: 'rebase'
+                pull_number: pr.number,
+                merge_method: 'squash'
               });
             }
