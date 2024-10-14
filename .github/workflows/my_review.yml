@@ -1,4 +1,4 @@
-name: Auto approve and merge
+name: Auto Approve and Merge
 
 on:
   issue_comment:
@@ -18,12 +18,12 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            await github.issues.addLabels({
+            await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
               labels: ['approved']
-            })
+            });
 
   auto-merge:
     needs: auto-approve
@@ -38,16 +38,17 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const pr = await github.pulls.get({
+            const pr = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number
             });
+
             if (pr.data.labels.some(label => label.name === 'approved')) {
-              await github.pulls.merge({
+              await github.rest.pulls.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: pr.data.number,
-                merge_method: 'squash'
+                merge_method: 'rebase'
               });
             }
